@@ -35,11 +35,20 @@
 
     // echo $aluno;
 
-    $usuario = new Usuario();
+    // Alterar usuário
+    // $usuario = new Usuario();
 
-    $usuario->loadById(4);
+    // $usuario->loadById(4);
 
-    $usuario->update("professor", "pr0f3ss0r");
+    // $usuario->update("professor", "pr0f3ss0r");
+
+    // echo $usuario;
+
+    $usuario = new Usuario;
+
+    $usuario->loadById(6);
+
+    $usuario->delete();
 
     echo $usuario;
 

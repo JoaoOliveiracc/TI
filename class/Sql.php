@@ -4,11 +4,13 @@
 
         private $conn;
 
+        // Conexão PDO com o BD mysql
         public function __construct() {
 
             $this->conn = new PDO("mysql:host=localhost;dbname=dbphp7", "root", "root");
         }
 
+        // Seta os parâmetros percorridos
         private function setParams($statement, $parameters = array()) {
 
             foreach ($parameters as $key => $value) {
@@ -23,6 +25,7 @@
             $statement->bindParam($key, $value);
         }
 
+        // Consulta
         public function query($rawQuery, $params = array()) {
 
             $stmt = $this->conn->prepare($rawQuery);
